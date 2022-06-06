@@ -2,24 +2,18 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Pet;
 use Illuminate\Http\Request;
 
 class PetController extends Controller
 {
-    public function index(){
-        return [
-            [
-                'nome' => 'Lulu',
-                'historia' => 'conteudo da historia'
-            ],
-            [
-                'nome' => 'Paçoca',
-                'historia' => 'conteudo da historia'
-            ],
-            [
-                'nome' => 'Princesa',
-                'historia' => 'conteudo da historia'
-            ]
-        ];
+    /**
+     * Retorna a lista de pets cadastrados
+     *
+     * @return Collection
+     */
+    public function index()
+    {
+        return Pet::get();
     }
 }
